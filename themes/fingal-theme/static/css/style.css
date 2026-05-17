@@ -39,7 +39,11 @@ h1, h2, h3 { line-height: 1.25; }
 .container {
   max-width: 980px;
   margin: 0 auto;
-  padding: 0 1.25rem;
+  padding: 0 2.5rem;
+}
+
+@media (max-width: 640px) {
+  .container { padding: 0 1.25rem; }
 }
 
 .visually-hidden {
