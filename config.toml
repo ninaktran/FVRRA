@@ -2,7 +2,8 @@ baseURL = "https://fingalweb.pages.dev/"
 languageCode = "en-au"
 title = "Fingal Valley Residents & Ratepayers Association"
 theme = "fingal-theme"
-paginate = 10
+[pagination]
+  pagerSize = 10
 enableRobotsTXT = true
 
 [params]
