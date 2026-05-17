@@ -5,7 +5,7 @@ draft: false
 layout: "contact"
 ---
 
-Have a question, concern, or want to get involved? We'd love to hear from you. Fill in the form below and the committee will get back to you as soon as possible.
+Have a question, concern, or want to get involved? We'd love to hear from you.
 
 ### Contact Information
 
@@ -13,5 +13,5 @@ Have a question, concern, or want to get involved? We'd love to hear from you. F
 P.O. Box 130 Fingal Tasmania 7214<br>
 Email: [fingalvrra@gmail.com](mailto:fingalvrra@gmail.com)
 
-You can also use the membership enquiry form if you're interested in joining the Association.
+You can also [download the membership form](/docs/membership-form-2026.docx) if you're interested in joining the Association.
 
