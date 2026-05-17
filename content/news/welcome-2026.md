@@ -1,6 +1,6 @@
 ---
 title: "Welcome to Our New Community Website"
-date: 2026-05-20
+date: 2026-05-17
 summary: "We're pleased to launch the new Fingal Valley RRA website — your hub for community news, events, and resources."
 author: "FVRRA Committee"
 draft: false
