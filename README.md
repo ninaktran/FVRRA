@@ -14,10 +14,6 @@ The working copy lives at:
 C:\Users\NinaTran\Downloads\FingalWeb
 ```
 
-> **Important:** Do NOT edit files inside Google Drive (`G:\My Drive\...`).
-> Docker cannot bind-mount Google Drive paths. Always work from the Downloads copy.
-> When you are done, copy changes back to Google Drive for cloud backup if needed.
-
 ### 2. Start the dev server
 
 Open **PowerShell** (or Windows Terminal), then run:
