@@ -11,7 +11,7 @@ enableRobotsTXT = true
   logo        = "/images/logo.png"
   heroImage   = "/images/hero-mountain.jpg"
   contactEmail = "ADMIN_EMAIL_HERE"
-  web3formsKey = "WEB3FORMS_KEY_HERE"
+  web3formsKey = "9aa70470-1d06-4b93-bc15-bcab04034183"
 
 [markup]
   [markup.goldmark]
