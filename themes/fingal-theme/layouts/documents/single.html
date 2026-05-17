@@ -1,0 +1,33 @@
+{{ define "main" }}
+<div class="container" style="padding-top:2rem; padding-bottom:3rem;">
+  <a class="back-link" href="/documents/">&larr; Back to Documents</a>
+  <article>
+    <header class="article-header">
+      <h1>{{ .Title }}</h1>
+      <div class="article-meta">
+        {{ with .Params.fileType }}<span class="doc-badge">{{ . }}</span>{{ end }}
+        {{ if not .Date.IsZero }}&ensp;Added {{ .Date.Format "2 January 2006" }}{{ end }}
+      </div>
+    </header>
+
+    {{ with .Params.fileURL }}
+      {{ $type := $.Params.fileType | default "" }}
+      {{ if eq $type "Image" }}
+        <img src="{{ . }}" alt="{{ $.Title }}"
+             style="max-width:600px; border-radius:8px; margin-bottom:1.5rem; box-shadow:0 2px 12px rgba(0,0,0,0.15);">
+      {{ end }}
+      <p>
+        <a class="btn btn-primary" href="{{ . }}" download style="font-size:1.05rem; padding:0.7rem 1.5rem;">
+          &#8595;&ensp;Download {{ $type }}
+        </a>
+      </p>
+    {{ end }}
+
+    <div class="article-body" style="margin-top:1.5rem;">
+      {{ .Content }}
+    </div>
+  </article>
+  <hr style="margin:2rem 0; border:none; border-top:1px solid var(--border);">
+  <a class="back-link" href="/documents/">&larr; Back to Documents</a>
+</div>
+{{ end }}

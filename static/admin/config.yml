@@ -1,0 +1,84 @@
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/fingal-valley-rra   # TODO: replace with your real GitHub username/repo
+  branch: main
+  base_url: https://sveltia-cms-auth.pages.dev    # Sveltia's public OAuth proxy — no custom server needed
+
+media_folder: static/images
+public_folder: /images
+
+collections:
+  # ── News & Announcements ────────────────────────────────────────────
+  - name: news
+    label: "News & Announcements"
+    folder: content/news
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title",        name: title,   widget: string }
+      - { label: "Publish Date", name: date,    widget: datetime }
+      - { label: "Summary",      name: summary, widget: text,
+          hint: "Short preview shown on the News listing page (1-2 sentences)." }
+      - { label: "Author",       name: author,  widget: string, required: false }
+      - { label: "Draft (hide from site)", name: draft, widget: boolean, default: false }
+      - { label: "Body",         name: body,    widget: markdown }
+
+  # ── Events ──────────────────────────────────────────────────────────
+  - name: events
+    label: Events
+    folder: content/events
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title",          name: title,         widget: string }
+      - { label: "Publish Date",   name: date,          widget: datetime }
+      - { label: "Event Date & Time", name: eventDate,  widget: datetime,
+          hint: "The actual date and time the event takes place." }
+      - { label: "Display Time",   name: eventTime,     widget: string,
+          hint: "How to show the time, e.g. '7:00 PM' or '6:30 PM – 8:00 PM'" }
+      - { label: "Location",       name: eventLocation, widget: string,
+          hint: "e.g. Fingal Valley Community Hall" }
+      - { label: "Draft (hide from site)", name: draft, widget: boolean, default: false }
+      - { label: "Details",        name: body,          widget: markdown }
+
+  # ── Documents ───────────────────────────────────────────────────────
+  - name: documents
+    label: Documents
+    folder: content/documents
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: title, widget: string }
+      - { label: "Date",  name: date,  widget: datetime }
+      - { label: "File URL", name: fileURL, widget: string,
+          hint: "Path to the file, e.g. /docs/my-file.docx or /images/my-image.png" }
+      - { label: "File Type", name: fileType, widget: select,
+          options: ["Word Document", "PDF", "Image", "Spreadsheet"] }
+      - { label: "Draft (hide from site)", name: draft, widget: boolean, default: false }
+      - { label: "Description", name: body, widget: markdown }
+
+  # ── Static Pages ────────────────────────────────────────────────────
+  - name: pages
+    label: Pages
+    files:
+      - name: home
+        label: "Home Page"
+        file: content/_index.md
+        fields:
+          - { label: "Title", name: title, widget: string }
+          - { label: "Body",  name: body,  widget: markdown }
+
+      - name: about
+        label: "About Page"
+        file: content/about.md
+        fields:
+          - { label: "Title", name: title, widget: string }
+          - { label: "Body",  name: body,  widget: markdown }
+
+      - name: contact
+        label: "Contact Page — Intro Text"
+        file: content/contact.md
+        fields:
+          - { label: "Title",      name: title, widget: string }
+          - { label: "Intro Text", name: body,  widget: markdown,
+              hint: "This text appears above the contact and membership forms." }

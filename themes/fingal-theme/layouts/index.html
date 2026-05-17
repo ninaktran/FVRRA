@@ -1,0 +1,156 @@
+{{ define "main" }}
+
+{{/* ── Hero: full-viewport CSS crossfade slideshow ── */}}
+<section class="hero-slideshow" aria-label="Fingal Valley landscape photos">
+
+  <div class="hero-slide" style="background-image:url('/images/community-01.jpg')"></div>
+  <div class="hero-slide" style="background-image:url('/images/community-02.jpg')"></div>
+  <div class="hero-slide" style="background-image:url('/images/community-03.jpg')"></div>
+  <div class="hero-slide" style="background-image:url('/images/community-04.jpg')"></div>
+  <div class="hero-slide" style="background-image:url('/images/community-05.jpg')"></div>
+  <div class="hero-slide" style="background-image:url('/images/community-06.jpg')"></div>
+  <div class="hero-slide" style="background-image:url('/images/community-07.jpg')"></div>
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">Fingal Valley, Tasmania</p>
+    <h1>Welcome to Our Community</h1>
+    <p class="hero-tagline">Residents & Ratepayers Association - advocating for our valley</p>
+    <div class="hero-ctas">
+      <a class="btn btn-hero-primary" href="/about/">About Us</a>
+      <a class="btn btn-hero-outline" href="/contact/">Get Involved</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll-hint" aria-hidden="true">
+    <span>&#8595;</span>
+  </div>
+</section>
+
+{{/* ── Welcome text from _index.md ── */}}
+{{ if .Content }}
+<div class="page-section">
+  <div class="container">
+    {{ .Content }}
+  </div>
+</div>
+{{ end }}
+
+{{/* ── Photo carousel: all community photos ── */}}
+<div class="photo-carousel" aria-label="Fingal Valley community photos">
+  <div class="photo-carousel-track">
+    <div class="photo-carousel-slide active">
+      <img src="/images/community-01.jpg" alt="Fingal Valley community" loading="lazy">
+    </div>
+    <div class="photo-carousel-slide">
+      <img src="/images/community-02.jpg" alt="Fingal Valley community" loading="lazy">
+    </div>
+    <div class="photo-carousel-slide">
+      <img src="/images/community-03.jpg" alt="Fingal Valley community" loading="lazy">
+    </div>
+    <div class="photo-carousel-slide">
+      <img src="/images/community-04.jpg" alt="Fingal Valley community" loading="lazy">
+    </div>
+    <div class="photo-carousel-slide">
+      <img src="/images/community-05.jpg" alt="Fingal Valley community" loading="lazy">
+    </div>
+    <div class="photo-carousel-slide">
+      <img src="/images/community-06.jpg" alt="Fingal Valley landscape" loading="lazy">
+    </div>
+    <div class="photo-carousel-slide">
+      <img src="/images/community-07.jpg" alt="Fingal Valley scenery" loading="lazy">
+    </div>
+    <button class="photo-carousel-btn photo-carousel-prev" aria-label="Previous photo">&#8249;</button>
+    <button class="photo-carousel-btn photo-carousel-next" aria-label="Next photo">&#8250;</button>
+  </div>
+  <div class="photo-carousel-dots" aria-hidden="true">
+    <span class="photo-carousel-dot active"></span>
+    <span class="photo-carousel-dot"></span>
+    <span class="photo-carousel-dot"></span>
+    <span class="photo-carousel-dot"></span>
+    <span class="photo-carousel-dot"></span>
+    <span class="photo-carousel-dot"></span>
+    <span class="photo-carousel-dot"></span>
+  </div>
+</div>
+
+<script>
+(function () {
+  var carousel = document.querySelector('.photo-carousel');
+  if (!carousel) return;
+  var slides = carousel.querySelectorAll('.photo-carousel-slide');
+  var dots   = carousel.querySelectorAll('.photo-carousel-dot');
+  var current = 0;
+
+  function goTo(index) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (index + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  carousel.querySelector('.photo-carousel-prev').addEventListener('click', function () { goTo(current - 1); });
+  carousel.querySelector('.photo-carousel-next').addEventListener('click', function () { goTo(current + 1); });
+  dots.forEach(function (dot, i) { dot.addEventListener('click', function () { goTo(i); }); });
+})();
+</script>
+
+{{/* ── Latest News ── */}}
+{{ $news := where .Site.RegularPages "Section" "news" }}
+{{ if $news }}
+<div class="page-section bg-light">
+  <div class="container">
+    <h2 class="section-heading">Latest News</h2>
+    <div class="card-grid">
+      {{ range first 3 $news }}
+        <div class="card">
+          <div class="card-body">
+            <div class="card-date">{{ .Date.Format "2 January 2006" }}</div>
+            <h3 class="card-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+            <p class="card-summary">{{ .Summary }}</p>
+            <a class="card-link" href="{{ .Permalink }}">Read more &rarr;</a>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+    <p style="margin-top:1.5rem;">
+      <a class="btn btn-outline" href="/news/">All News &rarr;</a>
+    </p>
+  </div>
+</div>
+{{ end }}
+
+{{/* ── Upcoming Events ── */}}
+{{ $events := where .Site.RegularPages "Section" "events" }}
+{{ if $events }}
+<div class="page-section">
+  <div class="container">
+    <h2 class="section-heading">Upcoming Events</h2>
+    <div class="card-grid">
+      {{ range first 2 $events }}
+        <div class="card">
+          <div class="card-body">
+            <div class="card-date">
+              {{ with .Params.eventDate }}{{ (time .).Format "Mon, 2 Jan 2006" }}{{ end }}
+            </div>
+            <h3 class="card-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+            <div class="event-meta">
+              {{ with .Params.eventTime }}<span>&#128336; {{ . }}</span>{{ end }}
+              {{ with .Params.eventLocation }}<span>&#128205; {{ . }}</span>{{ end }}
+            </div>
+            <a class="card-link" href="{{ .Permalink }}">Details &rarr;</a>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+    <p style="margin-top:1.5rem;">
+      <a class="btn btn-outline" href="/events/">All Events &rarr;</a>
+    </p>
+  </div>
+</div>
+{{ end }}
+
+
+{{ end }}

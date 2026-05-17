@@ -1,0 +1,23 @@
+{{ define "main" }}
+<div class="container" style="padding-top:2rem; padding-bottom:3rem;">
+  <a class="back-link" href="/events/">&larr; Back to Events</a>
+  <article>
+    <header class="article-header">
+      <h1>{{ .Title }}</h1>
+      <div class="article-meta">
+        {{ with .Params.eventDate }}
+          <strong>{{ (time .).Format "Monday, 2 January 2006" }}</strong>
+          &nbsp;
+        {{ end }}
+        {{ with .Params.eventTime }}&#128336; {{ . }}&ensp;{{ end }}
+        {{ with .Params.eventLocation }}&#128205; {{ . }}{{ end }}
+      </div>
+    </header>
+    <div class="article-body">
+      {{ .Content }}
+    </div>
+  </article>
+  <hr style="margin:2rem 0; border:none; border-top:1px solid var(--border);">
+  <a class="back-link" href="/events/">&larr; Back to Events</a>
+</div>
+{{ end }}

@@ -1,0 +1,66 @@
+{{ define "main" }}
+<div class="page-banner">
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+    <p>Community events and meetings in Fingal Valley.</p>
+  </div>
+</div>
+
+<div class="container page-section">
+  {{ $now := now }}
+  {{ $upcoming := slice }}
+  {{ $past     := slice }}
+
+  {{ range .Pages }}
+    {{ $eventDate := .Params.eventDate }}
+    {{ if $eventDate }}
+      {{ if gt (time $eventDate).Unix $now.Unix }}
+        {{ $upcoming = $upcoming | append . }}
+      {{ else }}
+        {{ $past = $past | append . }}
+      {{ end }}
+    {{ else }}
+      {{ $upcoming = $upcoming | append . }}
+    {{ end }}
+  {{ end }}
+
+  {{ if $upcoming }}
+    <h2 class="section-heading">Upcoming Events</h2>
+    <div class="card-grid">
+      {{ range sort $upcoming ".Params.eventDate" }}
+        <div class="card">
+          <div class="card-body">
+            <div class="card-date">
+              {{ with .Params.eventDate }}{{ (time .).Format "Mon, 2 Jan 2006" }}{{ end }}
+            </div>
+            <h3 class="card-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+            <div class="event-meta">
+              {{ with .Params.eventTime }}<span>&#128336; {{ . }}</span>{{ end }}
+              {{ with .Params.eventLocation }}<span>&#128205; {{ . }}</span>{{ end }}
+            </div>
+            <p class="card-summary">{{ .Summary }}</p>
+            <a class="card-link" href="{{ .Permalink }}">Details &rarr;</a>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  {{ else }}
+    <p>No upcoming events at the moment — check back soon.</p>
+  {{ end }}
+
+  {{ if $past }}
+    <h2 class="section-heading" style="margin-top:3rem;">Past Events</h2>
+    <ul class="past-events-list">
+      {{ range sort $past ".Params.eventDate" "desc" }}
+        <li>
+          <span class="past-event-date">
+            {{ with .Params.eventDate }}{{ (time .).Format "2 Jan 2006" }}{{ end }}
+          </span>
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+          {{ with .Params.eventLocation }}<span style="color:#999;font-size:0.85em;"> — {{ . }}</span>{{ end }}
+        </li>
+      {{ end }}
+    </ul>
+  {{ end }}
+</div>
+{{ end }}

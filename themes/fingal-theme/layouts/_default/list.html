@@ -1,0 +1,28 @@
+{{ define "main" }}
+<div class="page-banner">
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p>{{ . }}</p>{{ end }}
+  </div>
+</div>
+<div class="container page-section">
+  {{ .Content }}
+  {{ if .Pages }}
+    <div class="card-grid">
+      {{ range .Pages }}
+        <div class="card">
+          <div class="card-body">
+            <div class="card-date">{{ .Date.Format "2 January 2006" }}</div>
+            <h2 class="card-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+            <p class="card-summary">{{ .Summary }}</p>
+            <a class="card-link" href="{{ .Permalink }}">Read more &rarr;</a>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+    {{ template "_internal/pagination.html" . }}
+  {{ else }}
+    <p>Nothing here yet — check back soon.</p>
+  {{ end }}
+</div>
+{{ end }}

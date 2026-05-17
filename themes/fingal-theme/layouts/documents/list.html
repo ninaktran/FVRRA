@@ -1,0 +1,36 @@
+{{ define "main" }}
+<div class="page-banner">
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+    <p>Forms, certificates, and resources for members and residents.</p>
+  </div>
+</div>
+
+<div class="container page-section">
+  {{ if .Pages }}
+    <ul class="doc-list">
+      {{ range .Pages }}
+        {{ $type := .Params.fileType | default "Document" }}
+        {{ $icon := "📄" }}
+        {{ if eq $type "Image" }}{{ $icon = "🖼️" }}{{ end }}
+        {{ if eq $type "PDF" }}{{ $icon = "📕" }}{{ end }}
+        {{ if eq $type "Spreadsheet" }}{{ $icon = "📊" }}{{ end }}
+        {{ if eq $type "Word Document" }}{{ $icon = "📝" }}{{ end }}
+        <li class="doc-item">
+          <span class="doc-icon" aria-hidden="true">{{ $icon }}</span>
+          <div class="doc-info">
+            <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+            <p>{{ .Summary }}</p>
+            <span class="doc-badge">{{ $type }}</span>
+            {{ with .Params.fileURL }}
+              <a class="btn btn-primary" href="{{ . }}" download>&#8595; Download</a>
+            {{ end }}
+          </div>
+        </li>
+      {{ end }}
+    </ul>
+  {{ else }}
+    <p>No documents yet.</p>
+  {{ end }}
+</div>
+{{ end }}

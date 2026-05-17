@@ -1,0 +1,49 @@
+baseURL = "https://fingalweb.pages.dev/"
+languageCode = "en-au"
+title = "Fingal Valley Residents & Ratepayers Association"
+theme = "fingal-theme"
+paginate = 10
+enableRobotsTXT = true
+
+[params]
+  description = "Fingal Valley Residents and Ratepayers Association — serving our community since incorporation"
+  logo        = "/images/logo.png"
+  heroImage   = "/images/hero-mountain.jpg"
+  contactEmail = "ADMIN_EMAIL_HERE"
+  web3formsKey = "WEB3FORMS_KEY_HERE"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[menu]
+  [[menu.main]]
+    name   = "Home"
+    url    = "/"
+    weight = 1
+
+  [[menu.main]]
+    name   = "About"
+    url    = "/about/"
+    weight = 2
+
+  [[menu.main]]
+    name   = "News"
+    url    = "/news/"
+    weight = 3
+
+  [[menu.main]]
+    name   = "Documents"
+    url    = "/documents/"
+    weight = 4
+
+  [[menu.main]]
+    name   = "Events"
+    url    = "/events/"
+    weight = 5
+
+  [[menu.main]]
+    name   = "Contact"
+    url    = "/contact/"
+    weight = 6

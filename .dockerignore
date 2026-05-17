@@ -1,0 +1,7 @@
+vendor/
+node_modules/
+bin/
+obj/
+public/
+resources/
+.hugo_build.lock
