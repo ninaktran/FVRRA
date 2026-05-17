@@ -1,0 +1,146 @@
+{{ define "main" }}
+<div class="page-banner">
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+  </div>
+</div>
+
+<div class="container page-section" style="padding-left:3.5rem; padding-right:3.5rem;">
+  {{ with .Content }}
+    <div style="margin-bottom:2rem;">{{ . }}</div>
+  {{ end }}
+
+  {{/* ── Two-column: Contact left, Membership right (stacks on mobile) ── */}}
+  <div class="contact-forms-grid">
+
+    {{/* ── Form 1: General Contact ── */}}
+    <div class="form-section">
+      <h2>Send Us a Message</h2>
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="{{ .Site.Params.web3formsKey }}">
+        <input type="hidden" name="subject"    value="Website Contact — Fingal Valley RRA">
+        <input type="hidden" name="redirect"   value="/thank-you/">
+        <input type="checkbox" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off">
+
+        <div class="form-group">
+          <label for="contact-name">Your Name <span class="req">*</span></label>
+          <input type="text" id="contact-name" name="name" required placeholder="Jane Smith">
+        </div>
+        <div class="form-group">
+          <label for="contact-email">Email Address <span class="req">*</span></label>
+          <input type="email" id="contact-email" name="email" required placeholder="jane@example.com">
+        </div>
+        <div class="form-group">
+          <label for="contact-message">Message <span class="req">*</span></label>
+          <textarea id="contact-message" name="message" required placeholder="How can we help?"></textarea>
+        </div>
+        <div class="form-submit">
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </div>
+      </form>
+    </div>
+
+    {{/* ── Form 2: Membership Application ── */}}
+    <div class="form-section">
+      <h2>Membership Application</h2>
+      <p class="form-intro">
+        You can also <a href="/documents/membership-form-2026/">download the printable form</a>.
+      </p>
+
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="{{ .Site.Params.web3formsKey }}">
+        <input type="hidden" name="subject"    value="Membership Application — Fingal Valley RRA">
+        <input type="hidden" name="redirect"   value="/thank-you/">
+        <input type="checkbox" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off">
+
+        {{/* Personal Information */}}
+        <p class="form-section-label">Personal Information</p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="mem-firstname">First Name <span class="req">*</span></label>
+            <input type="text" id="mem-firstname" name="First Name" required placeholder="Jane">
+          </div>
+          <div class="form-group">
+            <label for="mem-surname">Surname <span class="req">*</span></label>
+            <input type="text" id="mem-surname" name="Surname" required placeholder="Smith">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="mem-address">Street Address <span class="req">*</span></label>
+          <input type="text" id="mem-address" name="Address" required placeholder="123 Valley Road">
+        </div>
+
+        <div class="form-row form-row-3">
+          <div class="form-group">
+            <label for="mem-city">City / Town <span class="req">*</span></label>
+            <input type="text" id="mem-city" name="City" required placeholder="Fingal">
+          </div>
+          <div class="form-group">
+            <label for="mem-state">State <span class="req">*</span></label>
+            <input type="text" id="mem-state" name="State" required placeholder="TAS" maxlength="10">
+          </div>
+          <div class="form-group">
+            <label for="mem-postcode">Postcode <span class="req">*</span></label>
+            <input type="text" id="mem-postcode" name="Postal Code" required placeholder="7214" maxlength="8">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="mem-phone">Phone Number</label>
+            <input type="tel" id="mem-phone" name="Phone Number" placeholder="04xx xxx xxx">
+          </div>
+          <div class="form-group">
+            <label for="mem-email">Email Address <span class="req">*</span></label>
+            <input type="email" id="mem-email" name="email" required placeholder="jane@example.com">
+          </div>
+        </div>
+
+        {{/* Involvement */}}
+        <p class="form-section-label">Getting Involved</p>
+
+        <div class="form-group">
+          <label for="mem-interests">Areas of Interest</label>
+          <textarea id="mem-interests" name="Areas of Interest" rows="3"
+            placeholder="e.g. local planning, road maintenance, community events, environmental issues…"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="mem-availability">Volunteering Availability</label>
+          <textarea id="mem-availability" name="Volunteering Availability (Days and Times)" rows="2"
+            placeholder="e.g. Weekday evenings, Saturday mornings…"></textarea>
+        </div>
+
+        {{/* Fees */}}
+        <p class="form-section-label">Membership Fee</p>
+
+        <div class="form-group fee-note">
+          <p>Annual membership: <strong>$10.00</strong> (July – June). Payment will be arranged after we receive your application.</p>
+        </div>
+
+        <div class="form-group">
+          <label for="mem-contribution">Voluntary Additional Contribution ($)</label>
+          <input type="number" id="mem-contribution" name="Voluntary Additional Contribution ($)"
+            min="0" step="0.01" placeholder="0.00">
+          <span class="form-hint">Optional — any amount to help support the Association's establishment costs.</span>
+        </div>
+
+        {{/* Declaration */}}
+        <div class="form-group form-check">
+          <label class="check-label">
+            <input type="checkbox" name="Declaration" value="I declare that the information provided is correct and I agree to abide by the rules of the FVRRA" required>
+            <span>I declare that the information provided is correct and I agree to abide by the rules of the Association. <span class="req">*</span></span>
+          </label>
+        </div>
+
+        <div class="form-submit">
+          <button type="submit" class="btn btn-primary">Submit Application</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>
+{{ end }}
