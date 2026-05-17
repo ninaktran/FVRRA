@@ -27,3 +27,9 @@ We are an independent, volunteer-run association committed to:
 Membership is open to all residents and ratepayers in the Fingal Valley area. As a member you'll receive regular updates, have voting rights at general meetings, and be part of a strong community voice.
 
 [Download the membership form](/docs/membership-form-2026.docx) or [contact us](/contact/) to express your interest.
+
+## Contact Information
+
+**Fingal Valley Residents and Ratepayers Association Inc.**
+P.O. Box 130 Fingal Tasmania 7214
+Email: [fingalvrra@gmail.com](mailto:fingalvrra@gmail.com)
