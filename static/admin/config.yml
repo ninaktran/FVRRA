@@ -5,7 +5,7 @@ backend:
   base_url: https://sveltia-cms-auth.pages.dev    # Sveltia's public OAuth proxy — no custom server needed
 
 media_folder: static/images
-public_folder: /images
+public_folder: /static
 
 collections:
   # ── News & Announcements ────────────────────────────────────────────
@@ -47,11 +47,13 @@ collections:
     folder: content/documents
     create: true
     slug: "{{slug}}"
+    media_folder: /static/docs
+    public_folder: /docs
     fields:
       - { label: "Title", name: title, widget: string }
       - { label: "Date",  name: date,  widget: datetime }
-      - { label: "File URL", name: fileURL, widget: string,
-          hint: "Path to the file, e.g. /docs/my-file.docx or /images/my-image.png" }
+      - { label: "File", name: fileURL, widget: file,
+          hint: "Upload a PDF, Word doc, spreadsheet, or image." }
       - { label: "File Type", name: fileType, widget: select,
           options: ["Word Document", "PDF", "Image", "Spreadsheet"] }
       - { label: "Draft (hide from site)", name: draft, widget: boolean, default: false }
