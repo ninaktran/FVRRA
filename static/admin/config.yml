@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: YOUR_GITHUB_USERNAME/fingal-valley-rra   # TODO: replace with your real GitHub username/repo
+  repo: ninaktran/FVRRA
   branch: main
   base_url: https://sveltia-cms-auth.pages.dev    # Sveltia's public OAuth proxy — no custom server needed
 
