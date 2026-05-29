@@ -9,23 +9,11 @@ Built with Hugo · Sveltia CMS · Web3Forms · Cloudflare Pages.
 
 ### 1. Open the project folder
 
-The working copy lives at:
-```
-C:\Users\NinaTran\Downloads\FingalWeb
-```
-
 ### 2. Start the dev server
 
 Open **PowerShell** (or Windows Terminal), then run:
 
 ```powershell
-docker-compose -f "C:\Users\NinaTran\Downloads\FingalWeb\docker-compose.yml" --project-directory "C:\Users\NinaTran\Downloads\FingalWeb" up
-```
-
-Or, if your terminal is already in the project folder:
-
-```powershell
-cd "C:\Users\NinaTran\Downloads\FingalWeb"
 docker-compose up
 ```
 
@@ -44,7 +32,7 @@ The server watches for file changes every 500 ms and **hot-reloads the browser a
 Press `Ctrl + C` in the terminal. Or from another terminal:
 
 ```powershell
-docker-compose -f "C:\Users\NinaTran\Downloads\FingalWeb\docker-compose.yml" --project-directory "C:\Users\NinaTran\Downloads\FingalWeb" down
+docker-compose -f down
 ```
 
 ---

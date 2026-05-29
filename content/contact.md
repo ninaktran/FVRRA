@@ -11,7 +11,10 @@ Have a question, concern, or want to get involved? We'd love to hear from you.
 
 **Fingal Valley Residents and Ratepayers Association Inc.**<br>
 P.O. Box 130 Fingal Tasmania 7214<br>
-Email: [fingalvrra@gmail.com](mailto:fingalvrra@gmail.com)
+Email: [fingalvrra@gmail.com](mailto:fingalvrra@gmail.com)<br>
+Phone: 0433 217 944<br>
+
+[Click here to follow us on our Facebook Page!](https://www.facebook.com/profile.php?id=61577499961958)
 
 You can also [download the membership form](/docs/membership-form-2026.docx) if you're interested in joining the Association.
 
