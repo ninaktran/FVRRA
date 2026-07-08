@@ -11,4 +11,6 @@ Whether you're a long-time resident or new to the valley, we invite you to get i
 <div style="text-align:center">
   <img src="/images/UnityHands.png" alt="Unity hands" style="width:15%; display:block; margin:0 auto 0.5rem">
   <strong>In Unity we have strength.</strong>
-</div>[![<div style="text-align:center">   <img src="/images/UnityHands.png" alt="Unity hands" style="width:15%; display:block; margin:0 auto 0.5rem">   <strong>In Unity we have strength.</strong> </div>](/static/Ben_Lomond.jpg "Ben Lomond")](/static/images/Ben Lomond.jpg)
+</div>[![<div style="text-align:center">   <img src="/images/UnityHands.png" alt="Unity hands" style="width:15%; display:block; margin:0 auto 0.5rem">   <strong>In Unity we have strength.</strong> </div>](/static/Ben_Lomond.jpg "Fingal Valley")](static/images/community-07.jpg)[![](/static/Sunset_2_Fingal_Valley.jpg "Sunset")](https://fingalvrra.pages.dev/static/Ben_Lomond.jpg)
+
+[<div style="text-align:center">   <img src="/images/UnityHands.png" alt="Unity hands" style="width:15%; display:block; margin:0 auto 0.5rem">   <strong>In Unity we have strength.</strong> </div>](https://fingalvrra.pages/dev/static/Ben Lomond.jpg)
