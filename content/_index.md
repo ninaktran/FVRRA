@@ -13,4 +13,4 @@ Whether you're a long-time resident or new to the valley, we invite you to get i
 alt="Ben Lomond"style="width:15%; display:block; margin:0 auto
 0.5rem">
 <strong>Ben Lomond</strong>
-</div>![](/static/Ben_Lomond.jpg)
+</div>[![Ben Lomond](/static/Ben_Lomond.jpg "Ben Lomond")](https://fingalvrra.pages.dev/static/Ben_Lomond.jpg)
