@@ -20,4 +20,4 @@ alt="Ben Lomond"style="width:15%; display:block; margin:0 auto
 alt="Ben Lomond"style="width:15%; display:block; margin:0 auto
 0.5rem">
 <strong>Ben Lomond</strong>
-</div>
+</div>[Ben Lomond](https://fingalvrra.pages.dev/static/Ben_Lomond.jpg)
