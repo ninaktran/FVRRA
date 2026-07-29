@@ -1,7 +1,7 @@
 ---
 title: Annual General Meeting 2027
 date: 2026-05-01
-eventDate: 2026-07-15T19:00:00
+eventDate: 2027-07-15T19:00
 eventTime: 7:00 PM
 eventLocation: Fingal Valley Community Hall
 draft: false
