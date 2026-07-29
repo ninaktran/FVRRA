@@ -7,7 +7,7 @@ eventLocation: Fingal Valley Community Hall
 draft: false
 ---
 
-The Fingal Valley Residents & Ratepayers Association invites all members and interested residents to our **Annual General Meeting 2026**.
+The Fingal Valley Residents & Ratepayers Association invites all members and interested residents to our **Annual General Meeting 2027**.
 
 ## Agenda
 
