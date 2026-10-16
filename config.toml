@@ -15,7 +15,7 @@ timeZone = "Australia/Hobart"
   logo        = "/images/logo.png"
   heroImage   = "/images/hero-mountain.jpg"
   contactEmail = "fingalvrra@gmail.com"
-  web3formsKey = "9aa70470-1d06-4b93-bc15-bcab04034183"
+  web3formsKey = "aa962400-93d1-442b-814c-04e8a0c7abf7"
 
 [markup]
   [markup.goldmark]
