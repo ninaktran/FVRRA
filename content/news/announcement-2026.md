@@ -1,32 +1,31 @@
 ---
-title: "Important FVRRA Announcement"
-date: 2026-05-01
-summary: "An important announcement from the Fingal Valley Residents & Ratepayers Association regarding matters affecting our community."
-author: "FVRRA Committee"
+title: Important FVRRA Announcement
+date: 2026-10-16T16:08:00
+summary: .The Fingal Valley Residents and Ratepayers Association (FVRRA) feel obligated to respond to the interesting discussions regarding the BODC election which have recently taken place on various media platforms.
+author: FVRRA Committee
 draft: false
 ---
 
-We are excited to announce that on community demand, the **Fingal Valley Residents and Ratepayers Association Inc.** is now a registered and therefore a legal community organization.
+The Fingal Valley Residents and Ratepayers Association (FVRRA) feel obligated to respond to the interesting discussions regarding the BODC election which have recently taken place on various media platforms. 
 
-Membership is open to all residents of the Fingal Valley — Fingal, Rossarden, Mathinna, Mangana, Avoca, St. Mary's, Upper Esk and all surrounding areas. The membership fee is **$10.00 per annum**.
+Members of the FVRRA would like to point out some important facts which we believe the Fingal Valley Community should be aware of before making a decision which candidate they will vote for.  It is a positive development that discussions have finally commenced to find ways to stimulate the community to enhance collective wellbeing and to restore vibrancy to the Fingal Valley and surrounding areas.
 
-## The purpose of this association is to:
+As has been advertised through various media platforms, the FVRRA was incorporated this year, strictly on community demands. The establishment of such a legal community-based organisation gives a unilateral voice and power to deal with local and state Government to address challenges that individuals themselves may find difficult to overcome.
 
-- Inspire Fingal Valley community (including surrounding areas) connections — for example, by markets, art shows, showcasing local talent, and dances.
-- Enhance collective well-being (e.g., access to facilities, community garden/crop sharing).
-- Utilize and invigorate community spaces (e.g., railway station, old primary school, recreation ground, main street).
-- Support the work of other organisations including sharing information.
+Some time ago, during discussions with a local MP, it was recommended that a planning group such as the FVRRA be established.  With this in mind, over the last 3 years, residents who are now members, attempted to work with local council and current candidates for the upcoming election.  Meetings were established and confirmed. However, such arrangements were ignored and totally disregarded.
 
-The Fingal Valley Residents and Ratepayers Association Inc. (FVRRA) commits to abiding by the Tasmanian Code of Conduct and upholding the values of the people which it represents.
+An attempt was made by a current candidate for the BODC election to revive the Fingal Valley Festival in 2027 – celebrating 100 years since the official establishment of Fingal.  A festival, which in the past attracted huge numbers of visitors and was highly regarded.  Unfortunately, without proper consultation with the community and a lack of experience, this is not possible, as has been shown and appeared to confirm what people had been saying “oh.. nothing can be done in the Valley”.  Furthermore, this situation has created a division in the community instead of uniting it and revitalising the community to move forward.
 
-Please [contact us](/contact/) by email if you are interested in a role on the committee — a role where you can use your skills to benefit the community. You are invited to attend a meeting where you will have the opportunity to present your ideas, which will be decided upon to be pursued in 2026.
+Members of the FVRRA are open to establishing a communication channel with current candidates to develop a realistic plan for the Fingal Valley based on feedback from young and old.  A working plan without any politics attached.  A working plan with community involvement to ensure success and follow the manifesto of the FVRRA  “Purpose  Unity  Passion”.
 
----
+Our door is always open those of you who are interested in the future of the Fingal Valley and surrounding areas.
 
-*Temporary Organizing Committee*
+Email: [fingalvrra@gmail.com](mailto:fingalvrra@gmail.com)
 
-**In Unity we have strength.**
+Website: [https://fingalvrra.pages.dev](https://fingalvrra.pages.dev)
 
----
+                                                       “IN UNITY WE HAVE STRENGHT”
 
-[Download the full announcement (Word Document)](/docs/announcement.docx)
+Committee of the Fingal Valley Residents and Ratepayers Association Inc
+
+1st of October 2026
