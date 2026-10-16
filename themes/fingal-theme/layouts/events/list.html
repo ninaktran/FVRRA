@@ -14,7 +14,7 @@
   {{ range .Pages }}
     {{ $eventDate := .Params.eventDate }}
     {{ if $eventDate }}
-      {{ if gt (time $eventDate).Unix $now.Unix }}
+      {{ if gt (partial "event-date.html" $eventDate).Unix $now.Unix }}
         {{ $upcoming = $upcoming | append . }}
       {{ else }}
         {{ $past = $past | append . }}
@@ -31,7 +31,7 @@
         <div class="card">
           <div class="card-body">
             <div class="card-date">
-              {{ with .Params.eventDate }}{{ (time .).Format "Mon, 2 Jan 2006" }}{{ end }}
+              {{ with .Params.eventDate }}{{ (partial "event-date.html" .).Format "Mon, 2 Jan 2006" }}{{ end }}
             </div>
             <h3 class="card-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
             <div class="event-meta">
@@ -53,7 +53,7 @@
       {{ range sort $past ".Params.eventDate" "desc" }}
         <li>
           <span class="past-event-date">
-            {{ with .Params.eventDate }}{{ (time .).Format "2 Jan 2006" }}{{ end }}
+            {{ with .Params.eventDate }}{{ (partial "event-date.html" .).Format "2 Jan 2006" }}{{ end }}
           </span>
           <a href="{{ .Permalink }}">{{ .Title }}</a>
           {{ with .Params.eventLocation }}<span style="color:#999;font-size:0.85em;"> — {{ . }}</span>{{ end }}

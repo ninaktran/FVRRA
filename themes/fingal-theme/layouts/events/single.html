@@ -6,7 +6,7 @@
       <h1>{{ .Title }}</h1>
       <div class="article-meta">
         {{ with .Params.eventDate }}
-          <strong>{{ (time .).Format "Monday, 2 January 2006" }}</strong>
+          <strong>{{ (partial "event-date.html" .).Format "Monday, 2 January 2006" }}</strong>
           &nbsp;
         {{ end }}
         {{ with .Params.eventTime }}&#128336; {{ . }}&ensp;{{ end }}

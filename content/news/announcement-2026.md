@@ -1,7 +1,7 @@
 ---
 title: Important FVRRA Announcement
 date: 2026-10-16T16:08:00
-summary: .The Fingal Valley Residents and Ratepayers Association (FVRRA) feel obligated to respond to the interesting discussions regarding the BODC election which have recently taken place on various media platforms.
+summary: The Fingal Valley Residents and Ratepayers Association (FVRRA) feel obligated to respond to the interesting discussions regarding the BODC election which have recently taken place on various media platforms.
 author: FVRRA Committee
 draft: false
 ---
@@ -24,7 +24,7 @@ Email: [fingalvrra@gmail.com](mailto:fingalvrra@gmail.com)
 
 Website: [https://fingalvrra.pages.dev](https://fingalvrra.pages.dev)
 
-                                                       “IN UNITY WE HAVE STRENGHT”
+**“IN UNITY WE HAVE STRENGTH”**
 
 Committee of the Fingal Valley Residents and Ratepayers Association Inc
 

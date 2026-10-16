@@ -123,7 +123,15 @@
 {{ end }}
 
 {{/* ── Upcoming Events ── */}}
-{{ $events := where .Site.RegularPages "Section" "events" }}
+{{ $events := slice }}
+{{ range $p := where .Site.RegularPages "Section" "events" }}
+  {{ with $p.Params.eventDate }}
+    {{ if gt (partial "event-date.html" .).Unix now.Unix }}
+      {{ $events = $events | append $p }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ $events = sort $events "Params.eventDate" }}
 {{ if $events }}
 <div class="page-section">
   <div class="container">
@@ -133,7 +141,7 @@
         <div class="card">
           <div class="card-body">
             <div class="card-date">
-              {{ with .Params.eventDate }}{{ (time .).Format "Mon, 2 Jan 2006" }}{{ end }}
+              {{ with .Params.eventDate }}{{ (partial "event-date.html" .).Format "Mon, 2 Jan 2006" }}{{ end }}
             </div>
             <h3 class="card-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
             <div class="event-meta">

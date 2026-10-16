@@ -1,7 +1,6 @@
-version: "3.8"
 services:
   hugo:
-    image: klakegg/hugo:ext-alpine
+    image: hugomods/hugo:exts-0.147.0
     command: server --bind=0.0.0.0 --disableFastRender --poll 500ms
     ports:
       - "1313:1313"

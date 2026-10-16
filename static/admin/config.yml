@@ -5,18 +5,20 @@ backend:
   base_url: https://sveltia-cms-auth.pages.dev    # Sveltia's public OAuth proxy — no custom server needed
 
 media_folder: static/images
-public_folder: /static
+public_folder: /images
 
 collections:
   # ── News & Announcements ────────────────────────────────────────────
   - name: news
     label: "News & Announcements"
+    description: "To change a post, open it from this list and edit it. Don't create a new post for an edit, or the post will appear twice. Changes go live about 2 minutes after you save. Check 'Last updated' at the bottom of the website to confirm."
     folder: content/news
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "Title",        name: title,   widget: string }
-      - { label: "Publish Date", name: date,    widget: datetime }
+      - { label: "Publish Date", name: date,    widget: datetime,
+          hint: "Tasmanian time. A post dated in the future stays hidden until that date and time." }
       - { label: "Summary",      name: summary, widget: text,
           hint: "Short preview shown on the News listing page (1-2 sentences)." }
       - { label: "Author",       name: author,  widget: string, required: false }
@@ -31,9 +33,10 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "Title",          name: title,         widget: string }
-      - { label: "Publish Date",   name: date,          widget: datetime }
+      - { label: "Publish Date",   name: date,          widget: datetime,
+          hint: "Tasmanian time. An event dated in the future stays hidden until that date and time." }
       - { label: "Event Date & Time", name: eventDate,  widget: datetime,
-          hint: "The actual date and time the event takes place." }
+          hint: "The actual date and time the event takes place (Tasmanian time)." }
       - { label: "Display Time",   name: eventTime,     widget: string,
           hint: "How to show the time, e.g. '7:00 PM' or '6:30 PM – 8:00 PM'" }
       - { label: "Location",       name: eventLocation, widget: string,

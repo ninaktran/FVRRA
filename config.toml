@@ -2,15 +2,19 @@ baseURL = "https://fingalvrra.pages.dev/"
 languageCode = "en-au"
 title = "Fingal Valley Residents & Ratepayers Association"
 theme = "fingal-theme"
+enableRobotsTXT = true
+# CMS writes local (Tasmanian) times without an offset; without this Hugo reads them
+# as UTC and treats posts as future-dated, silently leaving them off the site.
+timeZone = "Australia/Hobart"
+
 [pagination]
   pagerSize = 10
-enableRobotsTXT = true
 
 [params]
   description = "Fingal Valley Residents and Ratepayers Association — serving our community since incorporation"
   logo        = "/images/logo.png"
   heroImage   = "/images/hero-mountain.jpg"
-  contactEmail = "ADMIN_EMAIL_HERE"
+  contactEmail = "fingalvrra@gmail.com"
   web3formsKey = "9aa70470-1d06-4b93-bc15-bcab04034183"
 
 [markup]

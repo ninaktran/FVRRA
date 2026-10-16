@@ -1,0 +1,8 @@
+{{/* Parses an eventDate front matter value into a time.Time.
+     The CMS datetime widget may save "2027-07-15T19:00" (no seconds), which
+     Hugo's time function rejects and which fails the whole build. */}}
+{{ $d := . }}
+{{ if and (eq (printf "%T" $d) "string") (eq (len $d) 16) }}
+  {{ $d = print $d ":00" }}
+{{ end }}
+{{ return time.AsTime $d }}

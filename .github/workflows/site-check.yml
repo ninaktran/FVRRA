@@ -1,0 +1,53 @@
+# Catches problems with CMS edits that would otherwise fail silently on
+# Cloudflare Pages, and rebuilds the site when scheduled content becomes due.
+# A failed run emails the person who saved the change (GitHub's default).
+name: Site check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "5 * * * *" # hourly: publish posts whose date has just arrived
+  workflow_dispatch:
+
+env:
+  # Keep in sync with the HUGO_VERSION variable in Cloudflare Pages settings.
+  HUGO_VERSION: "0.147.0"
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      rebuild: ${{ steps.content.outputs.rebuild }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: ${{ env.HUGO_VERSION }}
+          extended: true
+
+      - name: Build site (same as Cloudflare Pages)
+        run: hugo --printPathWarnings
+
+      - name: Check content
+        id: content
+        run: python3 .github/scripts/check_content.py
+
+  rebuild:
+    # Cloudflare only builds on push, so future-dated posts and the
+    # upcoming/past event lists would otherwise never update by themselves.
+    needs: check
+    if: github.event_name == 'schedule' && needs.check.outputs.rebuild == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Cloudflare Pages deploy hook
+        env:
+          HOOK: ${{ secrets.CLOUDFLARE_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$HOOK" ]; then
+            echo "::warning::CLOUDFLARE_DEPLOY_HOOK secret is not set; scheduled content will not be published until the next edit."
+            exit 0
+          fi
+          curl -fsS -X POST "$HOOK"
