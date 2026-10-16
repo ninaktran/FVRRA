@@ -2,7 +2,7 @@
 title: Important announcement
 date: 2026-10-16T16:18:00
 summary: The Fingal Valley Residents and Ratepayers Association (FVRRA) feel obligated to respond to the interesting discussions regarding the BODC election which have recently taken place on various media platforms.
-author: ''
+author: Andrew Wentworth
 draft: false
 ---
 
